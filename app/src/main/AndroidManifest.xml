@@ -19,12 +19,15 @@
         android:theme="@style/Theme.ReportIt"
         tools:targetApi="31">
         <activity
-            android:name=".QuestionnaireActivity"
+            android:name=".SchoolAdmin"
             android:exported="false" />
         <activity
             android:name=".ChatUserActivity"
             android:exported="false"
             android:label="@string/title_activity_chat_user" />
+        <activity
+            android:name=".QuestionnaireActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 

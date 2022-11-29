@@ -1,4 +1,24 @@
 package com.example.reportit.screens.login.auth.login;
 
-public class LoginActivity {
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.reportit.R;
+
+public class LoginActivity extends AppCompatActivity {
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+
+    }
+
+    private boolean checkParams(){
+        String code = "";
+        return !code.isEmpty();
+    }
 }

@@ -1,24 +1,19 @@
 package com.example.reportit.launcher;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MotionEvent;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
-import com.example.reportit.R;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.reportit.screens.login.auth.login.LoginActivity;
 import com.example.reportit.screens.login.main.chat.ChatUserActivity;
-import com.example.reportit.screens.login.main.ui.questionaire.QuestionnaireActivity;
+import com.example.reportit.screens.login.main.school.SchoolAdmin;
 
 public class LauncherActivity extends AppCompatActivity {
 
@@ -32,15 +27,11 @@ public class LauncherActivity extends AppCompatActivity {
             if(sharedPreferences.getString("", null).contains(""))
                 intent = new Intent(this, ChatUserActivity.class);
             else
-                intent = new Intent(this, QuestionnaireActivity.class );
+                intent = new Intent(this, SchoolAdmin.class );
         }else
             intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
-    }
-    private String getLocation(){
-
-        return null;
     }
     //Oculta el teclado cuando se clicka en cualquier parte de la Activity.
     @Override

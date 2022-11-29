@@ -1,4 +1,4 @@
-package com.example.reportit.screens.login.main.ui.questionaire;
+package com.example.reportit.screens.login.main.school;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.reportit.R;
 
-public class QuestionnaireActivity extends AppCompatActivity {
+public class SchoolAdmin extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_questionnaire);
+        setContentView(R.layout.activity_school_admin);
     }
 }
