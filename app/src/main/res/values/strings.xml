@@ -10,4 +10,8 @@
     <string name="center_code">Código del centro</string>
     <string name="login_button">Acceder</string>
     <string name="no_code_button">¿No dispone de un código válido?</string>
+
+    <!-- Errors -->
+    <string name="error_code">Código erróneo</string>
+    <string name="error_login">No se ha podido iniciar sesión</string>
 </resources>

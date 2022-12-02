@@ -1,4 +1,4 @@
-package com.example.reportit.client;
+package com.example.reportit.client.rest;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,9 +7,9 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.reportit.client.dtos.UserDTO;
-import com.example.reportit.client.handlers.DefaultErrorHandler;
-import com.example.reportit.client.handlers.LoginResponseHandler;
+import com.example.reportit.client.rest.dtos.UserDTO;
+import com.example.reportit.client.rest.handlers.DefaultErrorHandler;
+import com.example.reportit.client.rest.handlers.LoginResponseHandler;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,17 +44,16 @@ public class RestClient {
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.POST,
-                REST_API_BASE_URL + "user",
+                REST_API_BASE_URL + "/user",
                 jsonBody,
                 response -> {
-                    UserDTO dto = new UserDTO();
-                    SharedPreferences sharedPreferences = context.getSharedPreferences("user", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                    editor.apply();
+                    UserDTO dto = new UserDTO(response);
                     handler.sessionRequestDidComplete(dto);
                 },new DefaultErrorHandler(handler)
         );
         queue.add(request);
+    }
+    public void postReport(){
+
     }
 }
