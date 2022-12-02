@@ -5,4 +5,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    
+    <!-- Login screen-->
+    <string name="center_code">Código del centro</string>
+    <string name="login_button">Acceder</string>
+    <string name="no_code_button">¿No dispone de un código válido?</string>
 </resources>
