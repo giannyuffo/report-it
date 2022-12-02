@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".screens.login.main.public_user.questionaire.QuestionnaireActivity">
 
+    <TextView
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:id="@+id/nocodeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/no_code_button"
+        android:textSize="10sp"
+        android:clickable="true"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

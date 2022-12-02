@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.reportit.R;
 
-public class SchoolAdmin extends AppCompatActivity {
+public class SchoolAdminActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

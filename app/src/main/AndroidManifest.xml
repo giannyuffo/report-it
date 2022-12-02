@@ -20,15 +20,22 @@
         android:theme="@style/Theme.ReportIt"
         tools:targetApi="31">
         <activity
-            android:name=".SchoolAdmin"
-            android:exported="false" />
+            android:name=".launcher.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
-            android:name=".ChatUserActivity"
+            android:name=".screens.login.main.chat.ChatUserActivity"
             android:exported="false"
             android:label="@string/title_activity_chat_user" />
         <activity
-            android:name=".QuestionnaireActivity"
-            android:exported="false" />
+            android:name=".screens.login.main.public_user.questionaire.QuestionnaireActivity"
+            android:exported="false"
+            android:label="@string/title_activity_chat_user" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -45,17 +52,20 @@
             android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".LocationActivity"
+            android:name=".location.LocationActivity"
             android:exported="false"
             android:label="@string/title_activity_location" />
         <activity
             android:name=".launcher.LauncherActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="true"
+            android:label="@string/title_activity_launcher" />
+        <activity
+            android:name=".screens.login.main.school.SchoolAdminActivity"
+            android:exported="false"
+            android:label="@string/title_activity_school_launcher" />
+        <activity
+            android:name=".screens.login.auth.login.LoginActivity"
+            android:exported="false">
         </activity>
     </application>
 

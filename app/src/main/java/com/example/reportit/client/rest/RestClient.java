@@ -8,6 +8,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.reportit.client.rest.dtos.UserDTO;
+import com.example.reportit.client.rest.handlers.CheckConnectionResponseHandler;
 import com.example.reportit.client.rest.handlers.DefaultErrorHandler;
 import com.example.reportit.client.rest.handlers.LoginResponseHandler;
 
@@ -18,7 +19,8 @@ public class RestClient {
     private RequestQueue queue;
     private Context context;
 
-    private final String REST_API_BASE_URL = "https://6385caa7beaa6458266881c9.mockapi.io/requestit/v1/";
+    //private final String REST_API_BASE_URL = "https://6385caa7beaa6458266881c9.mockapi.io/requestit/v1";
+    private final String REST_API_BASE_URL = "https://api.simplecheck.es/v1";
 
     private static RestClient instance = null;
 
@@ -30,6 +32,17 @@ public class RestClient {
         if(instance == null)
             instance = new RestClient(context);
         return instance;
+    }
+
+    public void checkConnection(CheckConnectionResponseHandler handler){
+        JsonObjectRequest request = new JsonObjectRequest(
+                Request.Method.GET,
+                REST_API_BASE_URL,
+                null,
+                response -> handler.requestDidComplete(true), new DefaultErrorHandler(handler)
+        );
+        queue.add(request);
+
     }
 
     public void postLoginUser(String code , String longitude, String latitude, LoginResponseHandler handler){

@@ -15,6 +15,7 @@ import androidx.lifecycle.Observer;
 import com.example.reportit.R;
 import com.example.reportit.launcher.LauncherActivity;
 import com.example.reportit.screens.login.auth.viewModel.LoginViewModel;
+import com.example.reportit.screens.login.main.public_user.questionaire.QuestionnaireActivity;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -85,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                 assert loginResponseCode != null;
                 switch(loginResponseCode){
                     case 200:
-                        startActivity(new Intent(getApplicationContext(), LauncherActivity.class));
+                        startActivity(new Intent(getApplicationContext(), QuestionnaireActivity.class));
                         finish();
                         break;
                     default:

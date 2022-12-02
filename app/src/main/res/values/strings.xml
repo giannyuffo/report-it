@@ -2,16 +2,34 @@
     <string name="app_name">Report It</string>
     <string name="title_activity_location">LocationActivity</string>
     <string name="title_activity_chat_user">ChatUserActivity</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_launcher">Launcher Activity</string>
+    <string name="title_activity_school_launcher">SchoolAdminActivity</string>
+
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    
+
     <!-- Login screen-->
     <string name="center_code">Código del centro</string>
-    <string name="login_button">Acceder</string>
-    <string name="no_code_button">¿No dispone de un código válido?</string>
 
+    <!-- Questionnaire-->
+    <string name="user_type">¿Qué tipo de usuario eres?</string>
+    <string name="user_type_student">Estudiante</string>
+    <string name="user_type_teacher">Profesor</string>
+    <string name="user_type_family">Familiar</string>
+    <string name="user_type_neigth">Vecino</string>
+    <string name="report_type">¿Qué quieres poner en nuestro conocimiento?</string>
     <!-- Errors -->
     <string name="error_code">Código erróneo</string>
     <string name="error_login">No se ha podido iniciar sesión</string>
+    <string name="error_connection">Ha ocurrido algún error</string>
+    <string name="error_message_reportit">ReportIt no está disponible actualmente</string>
+
+    <!--Buttons -->
+    <string name="login_button">Acceder</string>
+    <string name="no_code_button">¿No dispone de un código válido?</string>
+    <string name="try_another_time">Reintentar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="continue_btn">Continuar</string>
 </resources>
