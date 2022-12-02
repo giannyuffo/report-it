@@ -1,4 +1,4 @@
-package com.example.reportit.client.handlers;
+package com.example.reportit.client.rest;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;

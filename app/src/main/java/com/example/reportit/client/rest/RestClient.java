@@ -2,7 +2,6 @@ package com.example.reportit.client;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.database.DatabaseErrorHandler;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -10,7 +9,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.reportit.client.dtos.UserDTO;
 import com.example.reportit.client.handlers.DefaultErrorHandler;
-import com.example.reportit.client.handlers.LoginHandler;
+import com.example.reportit.client.handlers.LoginResponseHandler;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,11 +32,12 @@ public class RestClient {
         return instance;
     }
 
-    public void postLoginUser(String latitude, String longitude, LoginHandler handler){
+    public void postLoginUser(String code , String longitude, String latitude, LoginResponseHandler handler){
         JSONObject jsonBody = new JSONObject();
         try{
-            jsonBody.put("latitude",latitude);
+            jsonBody.put("code", code);
             jsonBody.put("longitude", longitude);
+            jsonBody.put("latitude",latitude);
         }catch(JSONException e){
             e.printStackTrace();
         }
