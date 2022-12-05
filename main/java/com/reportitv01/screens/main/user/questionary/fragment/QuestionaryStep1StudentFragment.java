@@ -1,5 +1,6 @@
 package com.reportitv01.screens.main.user.questionary.fragment;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
@@ -8,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,14 +20,14 @@ import android.widget.RadioGroup;
 import com.reportitv01.R;
 import com.reportitv01.screens.auth.viewmodel.QuestionaryViewModel;
 
-public class QuestionaryStep1Fragment extends Fragment {
+public class QuestionaryStep1StudentFragment extends Fragment {
 
     private QuestionaryViewModel questionaryViewModel;
     private Button continueButton;
-    private Button studentButton;
-    private Button teacherButton;
-    private Button familyButton;
-    private Button neigthButton;
+    private RadioButton meRadioButton;
+    private RadioButton otherRadioButton;
+    private RadioGroup radioGroup;
+
 
     public static QuestionaryStep1Fragment newInstance() {
         return new QuestionaryStep1Fragment();
@@ -42,30 +42,15 @@ public class QuestionaryStep1Fragment extends Fragment {
 
         //XML layout resources
         continueButton = view.findViewById(R.id.continueStep1Button);
-        studentButton = view.findViewById(R.id.studentOptionButton);
-        teacherButton = view.findViewById(R.id.teacherOptionButton);
-        familyButton = view.findViewById(R.id.familyOptionButton);
-        neigthButton = view.findViewById(R.id.neigthbOptionButton);
+        meRadioButton = view.findViewById(R.id.me_radio_button);
+        otherRadioButton = view.findViewById(R.id.other_radio_button);
+        radioGroup = view.findViewById(R.id.radioGroupDestinationReport);
 
         continueButton.setOnClickListener(nextFragmentRequest ->{
 
         });
-        studentButton.setOnClickListener(nextFragmentRequest ->{
-            questionaryViewModel.setStudent("student");
-            questionaryViewModel.setNextFragmentRequest(new QuestionaryStep1StudentFragment());
-        });
-        teacherButton.setOnClickListener(nextFragmentRequest ->{
-            questionaryViewModel.setTeacher("teacher");
-            questionaryViewModel.setNextFragmentRequest(new QuestionaryStep2Fragment());
-        });
-        familyButton.setOnClickListener(nextFragmentRequest ->{
-            questionaryViewModel.setFamily("family");
-            questionaryViewModel.setNextFragmentRequest(new QuestionaryStep2Fragment());
-        });
-        neigthButton.setOnClickListener(nextFragmentRequest ->{
-            questionaryViewModel.setNeigth("neigth");
-            questionaryViewModel.setNextFragmentRequest(new QuestionaryStep2Fragment());
-        });
+
+
         return view;
     }
 

@@ -75,6 +75,7 @@ public class QuestionaryViewModel extends AndroidViewModel {
         this.topBarTitle.setValue(topBarTitle);
     }
 
+
     //Getters
 
     public HashMap<String, String> getReportForm() {

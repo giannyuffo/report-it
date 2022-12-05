@@ -21,6 +21,9 @@
     <string name="user_type_neigth">Vecino</string>
     <string name="report_type">¿Qué quieres poner en nuestro conocimiento?</string>
     <string name="info">Información</string>
+    <string name="destination_report">¿A quién le está sucendiendo?</string>
+    <string name="me_report">A mi</string>
+    <string name="other_report">A otra persona</string>
     <!-- Errors -->
     <string name="error_code">Código erróneo</string>
     <string name="error_login">No se ha podido iniciar sesión</string>
