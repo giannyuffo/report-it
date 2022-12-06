@@ -27,7 +27,7 @@ import com.reportitv01.screens.main.user.questionary.fragment.bullyin.BullyingQu
 public class MissingObjectFragment extends Fragment {
     private QuestionaryViewModel questionaryViewModel;
     private TextInputEditText whereObjectInputText, whatObjectInputText,
-            moreInfoInputText;
+            moreInfoInputText, whenObjectInputText;
     private Button sendMissingObjectButton;
 
     public static MissingObjectFragment newInstance() {
@@ -43,6 +43,7 @@ public class MissingObjectFragment extends Fragment {
 
         //XML elements
         whereObjectInputText = view.findViewById(R.id.whereObjectInputText);
+        whenObjectInputText = view.findViewById(R.id.whenObjectInputText);
         whatObjectInputText  = view.findViewById(R.id.whatObjectInputText);
         moreInfoInputText  = view.findViewById(R.id.moreInfoInputText);
         sendMissingObjectButton = view.findViewById(R.id.sendMissingObjectButton);
@@ -59,10 +60,28 @@ public class MissingObjectFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                whenObjectInputText.setVisibility(View.VISIBLE);
+                whenObjectInputText.setEnabled(true);
+            }
+        });
+
+        whenObjectInputText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
                 whatObjectInputText.setVisibility(View.VISIBLE);
                 whatObjectInputText.setEnabled(true);
             }
         });
+
         whatObjectInputText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

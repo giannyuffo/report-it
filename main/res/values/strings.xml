@@ -40,6 +40,18 @@
     <string name="what">Cuéntanos qué ha sucedido</string>
     <!-- Missing Object-->
     <string name="more_info_object">Aporta más información relevante</string>
+    <string name="what_object">¿Qué objeto has extraviado?</string>
+    <!-- Teacher problem -->
+    <string name="teacher_info">Ahora, cuéntanos un poco acerca del problema</string>
+    <string name="teacher_name">¿Conoces el nombre del docente?</string>
+    <!-- Drugs-->
+    <string name="sellying_drugs">Venta</string>
+    <string name="taking_drugs">Consumo</string>
+    <string name="where_drugs">¿Dónde se venden?</string>
+    <string name="who_drugs">¿Quién se encarga de venderlas/ suministrarlas?</string>
+    <string name="taking_drugs_place">¿En qué lugar se consumen?</string>
+    <string name="who_take_drugs">¿Quién las consume?</string>
+    <string name="help_drugas">¿Te echamos una mano para dejarlo?</string>
 
     <!-- Errors -->
     <string name="error_code">Código erróneo</string>
