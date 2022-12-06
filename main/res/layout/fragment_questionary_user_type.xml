@@ -13,12 +13,12 @@
         app:layout_constraintGuide_begin="10dp" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/reportDestinationTextView"
+        android:id="@+id/reportTypeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
-        android:text="@string/destination_report"
+        android:text="@string/user_type"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
         android:textSize="25sp"
@@ -56,49 +56,73 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reportDestinationTextView">
+        app:layout_constraintTop_toBottomOf="@+id/reportTypeTextView">
 
         <LinearLayout
             android:id="@+id/stepOneLinnearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <RadioGroup
-                android:id="@+id/radioGroupDestinationReport"
-                android:checkedButton="@+id/me_radio_button"
+
+            <Button
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:id="@+id/studentOptionButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/user_type_student"
+                android:textSize="15dp"
+                app:errorEnabled="true"
+                app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <Button
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:id="@+id/teacherOptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="10dp"
+                android:text="@string/user_type_teacher"
+                android:textSize="15dp"
+                app:cornerRadius="20dp"
+                app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/studentOptionButton">
-                <RadioButton
-                    android:id="@+id/me_radio_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/me_report"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/studentOptionButton"
-                    />
-                <RadioButton
-                    android:id="@+id/other_radio_button"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/other_report"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/studentOptionButton"
-                    />
-            </RadioGroup>
+                app:layout_constraintTop_toBottomOf="@+id/studentOptionButton"/>
+            <Button
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:id="@+id/familyOptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/user_type_family"
+                android:textSize="15sp"
+                app:cornerRadius="20dp" app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/teacherOptionButton"/>
+            <Button
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                android:id="@+id/neigthbOptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="10dp"
+                android:text="@string/user_type_neigth"
+                android:textSize="15sp"
+                app:cornerRadius="20dp"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/familyOptionButton"/>
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

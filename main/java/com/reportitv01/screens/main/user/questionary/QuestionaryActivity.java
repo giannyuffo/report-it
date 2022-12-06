@@ -11,12 +11,11 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.android.material.textview.MaterialTextView;
 import com.reportitv01.R;
 import com.reportitv01.screens.auth.viewmodel.QuestionaryViewModel;
-import com.reportitv01.screens.main.user.questionary.fragment.QuestionaryStep1Fragment;
+import com.reportitv01.screens.main.user.questionary.fragment.QuestionaryUserTypeFragment;
 
 public class QuestionaryActivity extends AppCompatActivity {
     private QuestionaryViewModel questionaryViewModel;
@@ -38,7 +37,7 @@ public class QuestionaryActivity extends AppCompatActivity {
         });
 
         //Loading the first default fragment.
-        questionaryViewModel.setNextFragmentRequest(new QuestionaryStep1Fragment());
+        questionaryViewModel.setNextFragmentRequest(new QuestionaryUserTypeFragment());
 
         //Wait for a fragment load from ViewMOdel
         questionaryViewModel.getNextFragmentRequest().observe(this, new Observer<Fragment>() {

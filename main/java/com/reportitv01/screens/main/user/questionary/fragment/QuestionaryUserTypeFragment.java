@@ -8,29 +8,24 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import com.reportitv01.R;
 import com.reportitv01.screens.auth.viewmodel.QuestionaryViewModel;
 
-public class QuestionaryStep1Fragment extends Fragment {
+public class QuestionaryUserTypeFragment extends Fragment {
 
     private QuestionaryViewModel questionaryViewModel;
-    private Button continueButton;
-    private Button studentButton;
-    private Button teacherButton;
-    private Button familyButton;
-    private Button neigthButton;
+    private Button continueButton, studentButton,
+                   teacherButton, familyButton,
+                   neigthButton;
 
-    public static QuestionaryStep1Fragment newInstance() {
-        return new QuestionaryStep1Fragment();
+    public static QuestionaryUserTypeFragment newInstance() {
+        return new QuestionaryUserTypeFragment();
     }
 
     @Override
@@ -38,7 +33,7 @@ public class QuestionaryStep1Fragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         //ViewModel init and view inflate
         questionaryViewModel = new ViewModelProvider(requireActivity()).get(QuestionaryViewModel.class);
-        View view = inflater.inflate(R.layout.fragment_questionary_step1, container, false);
+        View view = inflater.inflate(R.layout.fragment_questionary_user_type, container, false);
 
         //XML layout resources
         continueButton = view.findViewById(R.id.continueStep1Button);
@@ -47,24 +42,21 @@ public class QuestionaryStep1Fragment extends Fragment {
         familyButton = view.findViewById(R.id.familyOptionButton);
         neigthButton = view.findViewById(R.id.neigthbOptionButton);
 
-        continueButton.setOnClickListener(nextFragmentRequest ->{
-
-        });
         studentButton.setOnClickListener(nextFragmentRequest ->{
             questionaryViewModel.setStudent("student");
-            questionaryViewModel.setNextFragmentRequest(new QuestionaryStep1StudentFragment());
+            questionaryViewModel.setNextFragmentRequest(new QuestionaryMeOtherFragment());
         });
         teacherButton.setOnClickListener(nextFragmentRequest ->{
             questionaryViewModel.setTeacher("teacher");
-            questionaryViewModel.setNextFragmentRequest(new QuestionaryStep2Fragment());
+            questionaryViewModel.setNextFragmentRequest(new QuestionaryProblemTypeFragment());
         });
         familyButton.setOnClickListener(nextFragmentRequest ->{
             questionaryViewModel.setFamily("family");
-            questionaryViewModel.setNextFragmentRequest(new QuestionaryStep2Fragment());
+            questionaryViewModel.setNextFragmentRequest(new QuestionaryProblemTypeFragment());
         });
         neigthButton.setOnClickListener(nextFragmentRequest ->{
             questionaryViewModel.setNeigth("neigth");
-            questionaryViewModel.setNextFragmentRequest(new QuestionaryStep2Fragment());
+            questionaryViewModel.setNextFragmentRequest(new QuestionaryProblemTypeFragment());
         });
         return view;
     }

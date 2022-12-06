@@ -24,6 +24,21 @@
     <string name="destination_report">¿A quién le está sucendiendo?</string>
     <string name="me_report">A mi</string>
     <string name="other_report">A otra persona</string>
+    <string name="urgent_help">¿Necesitas ayuda urgente?</string>
+    <string name="bullying">Acoso/ bullying</string>
+    <string name="missing_item">Objeto perdido</string>
+    <string name="drugs">Venta o consumo de drogas</string>
+    <string name="economic">Escaces de recursos económicos</string>
+    <string name="fraud">Fraude escolar</string>
+    <string name="teacher_problem">Problemas con un profesor/a</string>
+    <!--Bullying -->
+    <string name="more_info">Necesitamos que nos des más detalles</string>
+    <string name="where">¿Dónde ha sucedido?</string>
+    <string name="when">¿Cuándo ha ocurrido?</string>
+    <string name="who">¿Quién lo ha hecho?</string>
+    <string name="who_get">¿Quién lo está sufriendo?</string>
+    <string name="what">Cuéntanos qué ha sucedido</string>
+
     <!-- Errors -->
     <string name="error_code">Código erróneo</string>
     <string name="error_login">No se ha podido iniciar sesión</string>

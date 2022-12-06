@@ -19,10 +19,12 @@ import com.reportitv01.screens.auth.viewmodel.LoginViewModel;
 import com.reportitv01.screens.main.user.questionary.QuestionaryActivity;
 
 public class LoginActivity extends AppCompatActivity {
+    //Scholarships center information url
+    private final String urlNoCode = "https://centroseducativos.gal/";
+
     private TextInputEditText codeInputText;
     private TextInputLayout codeInputLayout;
-    private Button loginButton;
-    private Button nocodeButton;
+    private Button loginButton, nocodeButton;
     private LoginViewModel loginViewModel;
 
     @Override
@@ -59,16 +61,18 @@ public class LoginActivity extends AppCompatActivity {
         nocodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "";
-                Intent intent = new Intent(Intent.ACTION_CALL,
-                        Uri.parse("Ayuda contra el acoso: 900 018 018"));
-                startActivity(intent);
+                openWebPage(urlNoCode);
             }
         });
         loginButton.setOnClickListener(view ->{
             startActivity(new Intent(LoginActivity.this, QuestionaryActivity.class));
         });
-
+    }
+    //Open a webpage with Scholarships center information
+    private void openWebPage(String url) {
+        Uri webpage = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        startActivity(intent);
     }
     //Hidde the keyboard on screen click
     @Override

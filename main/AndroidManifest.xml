@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.reportitv01" >
+    package="com.reportitv01">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReportItV01"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".SendReportActivity"
+            android:exported="false" />
         <activity
             android:name=".screens.main.user.questionary.QuestionaryActivity"
             android:exported="false" />
@@ -26,9 +29,10 @@
         <activity
             android:name=".launcher.LauncherActivity"
             android:exported="true"
-            tools:ignore="Instantiatable" >
+            tools:ignore="Instantiatable">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
