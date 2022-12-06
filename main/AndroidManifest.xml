@@ -18,7 +18,7 @@
         android:theme="@style/Theme.ReportItV01"
         tools:targetApi="31">
         <activity
-            android:name=".SendReportActivity"
+            android:name=".screens.main.user.send.SendReportActivity"
             android:exported="false" />
         <activity
             android:name=".screens.main.user.questionary.QuestionaryActivity"

@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
-        android:text="@string/report_type"
+        android:text="@string/about_drugs"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
         android:textSize="25sp"
@@ -29,12 +29,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/continueStep1Button"
+        android:id="@+id/sendDrugsSellingButton"
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/continue_btn"
         android:textSize="20sp"
         android:visibility="gone"
@@ -52,7 +53,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,95 +65,98 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-                android:id="@+id/bullingButton"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/whereDrugsTextLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:text="@string/bullying"
-                android:textSize="15dp"
-                app:errorEnabled="true"
-                app:cornerRadius="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
-            <Button
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-                android:id="@+id/missingItemButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp"
-                android:text="@string/missing_item"
-                android:textSize="15dp"
-                app:cornerRadius="20dp"
+                android:ems="10"
+                android:hint="@string/where_drugs"
+                android:textSize="10sp"
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bullingButton"/>
-            <Button
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-                android:id="@+id/drugsButton"
+                app:layout_constraintStart_toStartOf="parent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/whereDrugsInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/whenDrugsTextLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:text="@string/drugs"
-                android:textSize="15sp"
-                app:cornerRadius="20dp" app:errorEnabled="true"
+                android:ems="10"
+                android:hint="@string/when"
+                android:textSize="10sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/missingItemButton"/>
-            <Button
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-                android:id="@+id/economicProblemButton"
+                app:layout_constraintTop_toBottomOf="@+id/whereTextLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/whenDrugsInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:enabled="false"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/whoDrugsTextLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:text="@string/economic"
-                android:textSize="15sp"
-                app:cornerRadius="20dp"
-                app:errorEnabled="true"
+                android:ems="10"
+                android:hint="@string/who_drugs"
+                android:textSize="10sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/drugsButton"/>
-            <Button
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-                android:id="@+id/fraudButton"
+                app:layout_constraintTop_toBottomOf="@+id/whenObjectTextLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/whoDrugsInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    android:enabled="false"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/moreInfoDrugsTextLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:text="@string/fraud"
-                android:textSize="15sp"
-                android:enabled="false"
-                app:cornerRadius="20dp"
-                app:errorEnabled="true"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="@string/more_info_object"
+                android:textSize="10sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/economicProblemButton"/>
-            <Button
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-                android:id="@+id/teacherProblemButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="10dp"
-                android:text="@string/teacher_problem"
-                android:textSize="15sp"
-                app:cornerRadius="20dp"
-                app:errorEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fraudButton"/>
+                app:layout_constraintTop_toBottomOf="@+id/whatObjectTextLayout">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/moreInfoDrugsInputText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:errorEnabled="true"
+                    android:visibility="invisible"
+                    android:enabled="false"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
     </ScrollView>

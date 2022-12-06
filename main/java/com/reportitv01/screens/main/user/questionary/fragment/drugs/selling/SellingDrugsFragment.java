@@ -1,11 +1,15 @@
-package com.reportitv01.screens.main.user.questionary.fragment.teacher_problem;
+package com.reportitv01.screens.main.user.questionary.fragment.drugs.selling;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -17,35 +21,35 @@ import android.widget.Button;
 import com.google.android.material.textfield.TextInputEditText;
 import com.reportitv01.R;
 import com.reportitv01.screens.auth.viewmodel.QuestionaryViewModel;
+import com.reportitv01.screens.main.user.questionary.fragment.bullyin.BullyingQuestionaryFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TeacherProblemFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class TeacherProblemFragment extends Fragment {
+public class SellingDrugsFragment extends Fragment {
     private QuestionaryViewModel questionaryViewModel;
-    private Button sendMissingTeacherButton;
-    private TextInputEditText whoTeacherInputText, whenTeacherInputText,
-            moreInfoTeacherInputText;
+    private Button sendDrugsSellingButton;
+    private TextInputEditText whereDrugsInputText,whenDrugsInputText,
+            whoDrugsInputText, moreInfoDrugsInputText;
 
-    public static TeacherProblemFragment newInstance() {
-        return new TeacherProblemFragment();
+    public static SellingDrugsFragment newInstance() {
+        return new SellingDrugsFragment();
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         //ViewModel init and view inflate
         questionaryViewModel = new ViewModelProvider(requireActivity()).get(QuestionaryViewModel.class);
-        View view = inflater.inflate(R.layout.fragment_teacher_problem, container, false);
+        View view = inflater.inflate(R.layout.fragment_selling_drugs, container, false);
+
 
         //XML elements
-        whoTeacherInputText = view.findViewById(R.id.whoTeacherInputText);
-        whenTeacherInputText = view.findViewById(R.id.whenTeacherInputText);
-        moreInfoTeacherInputText = view.findViewById(R.id.moreInfoTeacherInputText);
-        sendMissingTeacherButton = view.findViewById(R.id.sendMissingTeacherButton);
+        whereDrugsInputText = view.findViewById(R.id.whereDrugsInputText);
+        whenDrugsInputText = view.findViewById(R.id.whenDrugsInputText);
+        whoDrugsInputText  = view.findViewById(R.id.whoDrugsInputText);
+        moreInfoDrugsInputText = view.findViewById(R.id.moreInfoDrugsInputText);
+        sendDrugsSellingButton = view.findViewById(R.id.sendDrugsSellingButton);
 
-        whoTeacherInputText.addTextChangedListener(new TextWatcher() {
+
+        whereDrugsInputText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -57,12 +61,12 @@ public class TeacherProblemFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                whenTeacherInputText.setVisibility(View.VISIBLE);
-                whenTeacherInputText.setEnabled(true);
+                whenDrugsInputText.setVisibility(View.VISIBLE);
+                whenDrugsInputText.setEnabled(true);
             }
         });
 
-        whenTeacherInputText.addTextChangedListener(new TextWatcher() {
+        whenDrugsInputText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -74,12 +78,12 @@ public class TeacherProblemFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                moreInfoTeacherInputText.setVisibility(View.VISIBLE);
-                moreInfoTeacherInputText.setEnabled(true);
+                whoDrugsInputText.setVisibility(View.VISIBLE);
+                whoDrugsInputText.setEnabled(true);
             }
         });
 
-        moreInfoTeacherInputText.addTextChangedListener(new TextWatcher() {
+        whoDrugsInputText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -92,11 +96,28 @@ public class TeacherProblemFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                sendMissingTeacherButton.setVisibility(View.VISIBLE);
-                sendMissingTeacherButton.setEnabled(true);
+                moreInfoDrugsInputText.setVisibility(View.VISIBLE);
+                moreInfoDrugsInputText.setEnabled(true);
             }
         });
-        sendMissingTeacherButton.setOnClickListener(new View.OnClickListener() {
+        moreInfoDrugsInputText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                sendDrugsSellingButton.setVisibility(View.VISIBLE);
+                sendDrugsSellingButton.setEnabled(true);
+            }
+        });
+        sendDrugsSellingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -105,6 +126,7 @@ public class TeacherProblemFragment extends Fragment {
 
         return view;
     }
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

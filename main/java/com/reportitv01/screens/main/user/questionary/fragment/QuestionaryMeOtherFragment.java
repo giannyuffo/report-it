@@ -19,11 +19,13 @@ import android.widget.Button;
 import com.reportitv01.R;
 import com.reportitv01.screens.auth.viewmodel.QuestionaryViewModel;
 
+import java.util.HashMap;
+
 public class QuestionaryMeOtherFragment extends Fragment {
 
     //Suicidal behavior phone
     private final String helpPhone ="024";
-
+    HashMap<String,String> reportForm;
     private QuestionaryViewModel questionaryViewModel;
     private Button meButton, otherButton, helpButton;
 
@@ -34,9 +36,11 @@ public class QuestionaryMeOtherFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
         //ViewModel init and view inflate
         questionaryViewModel = new ViewModelProvider(requireActivity()).get(QuestionaryViewModel.class);
         View view = inflater.inflate(R.layout.fragment_questionary_me_other, container, false);
+        reportForm = questionaryViewModel.getReportForm();
 
         //XML layout resources
         meButton = view.findViewById(R.id.meButton);
@@ -44,6 +48,7 @@ public class QuestionaryMeOtherFragment extends Fragment {
         helpButton = view.findViewById(R.id.helpButton);
 
         meButton.setOnClickListener(nextFragmentRequest ->{
+
             questionaryViewModel.setNextFragmentRequest(new QuestionaryProblemTypeFragment());
         });
         otherButton.setOnClickListener(nextFragmentRequest ->{

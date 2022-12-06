@@ -1,6 +1,7 @@
 package com.reportitv01.screens.auth.viewmodel;
 
 import android.app.Application;
+import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -65,6 +66,9 @@ public class QuestionaryViewModel extends AndroidViewModel {
     }
 
     public void setNextFragmentRequest(Fragment fragment){
+        Bundle b = new Bundle();
+        b.putString("user_type","studfent");
+        fragment.setArguments(b);
         nextFragmentRequest.setValue(fragment);
     }
     public void virtualBackButtonRequest(Boolean value) {

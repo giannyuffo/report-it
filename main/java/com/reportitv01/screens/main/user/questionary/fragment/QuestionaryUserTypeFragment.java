@@ -24,6 +24,7 @@ public class QuestionaryUserTypeFragment extends Fragment {
                    teacherButton, familyButton,
                    neigthButton;
 
+
     public static QuestionaryUserTypeFragment newInstance() {
         return new QuestionaryUserTypeFragment();
     }
@@ -34,6 +35,7 @@ public class QuestionaryUserTypeFragment extends Fragment {
         //ViewModel init and view inflate
         questionaryViewModel = new ViewModelProvider(requireActivity()).get(QuestionaryViewModel.class);
         View view = inflater.inflate(R.layout.fragment_questionary_user_type, container, false);
+
 
         //XML layout resources
         continueButton = view.findViewById(R.id.continueStep1Button);
