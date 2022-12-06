@@ -22,8 +22,6 @@ public class LauncherActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         onLocationAcces();
-
-
     }
     @Override
     public void onResume() {
@@ -31,6 +29,7 @@ public class LauncherActivity extends AppCompatActivity {
         if(this.locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
             Intent intent;
             intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
         }else
             onLocationAcces();
     }
@@ -50,6 +49,7 @@ public class LauncherActivity extends AppCompatActivity {
     public void onBackPressed(){
         finish();
     }
+    //Location acces request if the device dont have the location services turn on.
     private void onLocationAcces(){
         AtomicBoolean isGPSEnabled = new AtomicBoolean(false);
         this.locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);

@@ -1,8 +1,6 @@
 package com.reportitv01.screens.auth.viewmodel;
 
 import android.app.Application;
-import android.content.Context;
-import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -14,6 +12,7 @@ public class LoginViewModel extends AndroidViewModel {
     MutableLiveData<Boolean> formValid;
     MutableLiveData<UserDTO> loginResponse;
     MutableLiveData<Integer> loginResponseCode;
+    MutableLiveData<Boolean> locationEnabled;
     //LoginRepository loginRepository;
     Boolean codeValid;
 
@@ -42,7 +41,6 @@ public class LoginViewModel extends AndroidViewModel {
         validateFields();
         return codeValid;
     }
-
 /*
     public void postLogin(String code, String latitude, String longitude){
         loginRepository.postLogin(code, longitude, latitude, new LoginResponseHandler() {
