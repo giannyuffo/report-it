@@ -43,6 +43,7 @@ public class BullyingQuestionaryFragment extends Fragment {
         questionaryViewModel = new ViewModelProvider(requireActivity()).get(QuestionaryViewModel.class);
         View view = inflater.inflate(R.layout.fragment_bullying_questionary, container, false);
 
+        //XML elements
         sendButton = view.findViewById(R.id.sendBullyingButton);
         whereEditText = view.findViewById(R.id.whereInputText);
         whenEditText = view.findViewById(R.id.whenInputText);
@@ -62,11 +63,11 @@ public class BullyingQuestionaryFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                whenTextLayout.setEnabled(true);
-                whenTextLayout.setVisibility(View.VISIBLE);
+                whenEditText.setVisibility(View.VISIBLE);
+                whenEditText.setEnabled(true);
             }
         });
-        whereEditText.addTextChangedListener(new TextWatcher() {
+        whenEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -79,6 +80,7 @@ public class BullyingQuestionaryFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                whoEditText.setVisibility(View.VISIBLE);
                 whoEditText.setEnabled(true);
             }
         });
@@ -95,6 +97,7 @@ public class BullyingQuestionaryFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                whomeEditText.setVisibility(View.VISIBLE);
                 whomeEditText.setEnabled(true);
             }
         });
@@ -111,6 +114,7 @@ public class BullyingQuestionaryFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                whatEditText.setVisibility(View.VISIBLE);
                 whatEditText.setEnabled(true);
             }
         });
@@ -132,12 +136,11 @@ public class BullyingQuestionaryFragment extends Fragment {
             }
         });
 
-        sendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        sendButton.setOnClickListener(nextFragmentRequest -> {
+
                 Intent intent = new Intent(getContext(), SendReportActivity.class);
                 startActivity(intent);
-            }
+
         });
 
         return view;

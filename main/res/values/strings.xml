@@ -38,6 +38,8 @@
     <string name="who">¿Quién lo ha hecho?</string>
     <string name="who_get">¿Quién lo está sufriendo?</string>
     <string name="what">Cuéntanos qué ha sucedido</string>
+    <!-- Missing Object-->
+    <string name="more_info_object">Aporta más información relevante</string>
 
     <!-- Errors -->
     <string name="error_code">Código erróneo</string>
